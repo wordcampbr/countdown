@@ -3,7 +3,7 @@
 
 from datetime import datetime, timezone, timedelta
 
-TARGET = datetime(2026, 10, 30, 12, 0, 0, tzinfo=timezone.utc)  # 09:00 BRT
+TARGET = datetime(2026, 10, 30, 15, 30, 0, tzinfo=timezone.utc)  # 12:30 BRT
 CYAN_700 = "#00595D"
 SAND_100 = "#FFF8F1"
 ORANGE_600 = "#C6360B"

@@ -11,7 +11,7 @@ precisão entre uma geração e outra.
 
 from datetime import datetime, timezone, timedelta
 
-TARGET = datetime(2026, 10, 30, 12, 0, 0, tzinfo=timezone.utc)  # 09:00 BRT
+TARGET = datetime(2026, 10, 30, 15, 30, 0, tzinfo=timezone.utc)  # 12:30 BRT
 
 TEMPLATE = """/* Gerado automaticamente por generate-css.py — não editar à mão. */
 /* Cole em Aparência > Personalizar > CSS Adicional. */

@@ -27,7 +27,7 @@
 
   <script type="text/javascript"><![CDATA[
     (function () {
-      var TARGET = Date.UTC(2026, 9, 30, 12, 0, 0); // 30 out 2026, 09:00 BRT
+      var TARGET = Date.UTC(2026, 9, 30, 15, 30, 0); // 30 out 2026, 12:30 BRT
       var ids = ["cd-days", "cd-hours", "cd-minutes", "cd-seconds"];
 
       function pad(n) {
