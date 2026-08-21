@@ -1,0 +1,30 @@
+name: Atualizar countdown.svg
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # todo dia às 03:00 UTC (00:00 BRT)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gerar SVG
+        run: python3 generate-svg.py
+
+      - name: Commit se houver mudança
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- countdown.svg; then
+            git add countdown.svg
+            git commit -m "chore: atualiza countdown.svg"
+            git push
+          else
+            echo "Sem mudanças."
+          fi
