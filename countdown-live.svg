@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="170" viewBox="0 0 640 170" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" role="img" aria-label="Contador regressivo para o WordCamp Brasil 2026">
+  <rect width="640" height="170" rx="16" fill="#FFF8F1" stroke="#E9E0D8"/>
+  <text x="320" y="34" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="1" fill="#00595D">FALTAM PARA O WORDCAMP BRASIL 2026</text>
+
+  <g>
+    <rect x="24" y="48" width="136" height="80" rx="10" fill="#00595D"/>
+    <text id="cd-days" x="92" y="96" text-anchor="middle" font-size="40" font-weight="800" fill="#FFF8F1">--</text>
+    <text x="92" y="118" text-anchor="middle" font-size="12" letter-spacing="1" fill="#FFF8F1" opacity="0.85">DIAS</text>
+  </g>
+  <g>
+    <rect x="176" y="48" width="136" height="80" rx="10" fill="#00595D"/>
+    <text id="cd-hours" x="244" y="96" text-anchor="middle" font-size="40" font-weight="800" fill="#FFF8F1">--</text>
+    <text x="244" y="118" text-anchor="middle" font-size="12" letter-spacing="1" fill="#FFF8F1" opacity="0.85">HORAS</text>
+  </g>
+  <g>
+    <rect x="328" y="48" width="136" height="80" rx="10" fill="#00595D"/>
+    <text id="cd-minutes" x="396" y="96" text-anchor="middle" font-size="40" font-weight="800" fill="#FFF8F1">--</text>
+    <text x="396" y="118" text-anchor="middle" font-size="12" letter-spacing="1" fill="#FFF8F1" opacity="0.85">MIN</text>
+  </g>
+  <g>
+    <rect x="480" y="48" width="136" height="80" rx="10" fill="#00595D"/>
+    <text id="cd-seconds" x="548" y="96" text-anchor="middle" font-size="40" font-weight="800" fill="#FFF8F1">--</text>
+    <text x="548" y="118" text-anchor="middle" font-size="12" letter-spacing="1" fill="#FFF8F1" opacity="0.85">SEG</text>
+  </g>
+
+  <text x="320" y="152" text-anchor="middle" font-size="12" fill="#4A5654">30 e 31 de outubro de 2026 · Belo Horizonte (FUMEC)</text>
+
+  <script type="text/javascript"><![CDATA[
+    (function () {
+      var TARGET = Date.UTC(2026, 9, 30, 12, 0, 0); // 30 out 2026, 09:00 BRT
+      var ids = ["cd-days", "cd-hours", "cd-minutes", "cd-seconds"];
+
+      function pad(n) {
+        return n < 10 ? "0" + n : String(n);
+      }
+
+      function tick() {
+        var diff = TARGET - Date.now();
+        if (diff < 0) diff = 0;
+
+        var totalSeconds = Math.floor(diff / 1000);
+        var days = Math.floor(totalSeconds / 86400);
+        var hours = Math.floor((totalSeconds % 86400) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+
+        var values = [String(days), pad(hours), pad(minutes), pad(seconds)];
+        for (var i = 0; i < ids.length; i++) {
+          var el = document.getElementById(ids[i]);
+          if (el) el.textContent = values[i];
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  ]]></script>
+</svg>
