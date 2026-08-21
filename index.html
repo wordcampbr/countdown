@@ -112,6 +112,14 @@
   <p class="countdown__footer">30 e 31 de outubro de 2026 · Belo Horizonte (FUMEC) — <a href="https://brasil.wordcamp.org/2026/" target="_blank" rel="noopener">brasil.wordcamp.org/2026</a></p>
 </div>
 
+<!--
+  Teste do countdown-live.svg como <img>: como imagem, o <script> embutido no SVG
+  não roda (navegadores desativam script em SVG carregado via <img>), então isso
+  vai renderizar os placeholders "--" parados, não um contador vivo. Pra ticar de
+  verdade, o SVG precisa ir via <iframe src="...svg"> ou <object type="image/svg+xml">.
+-->
+<img decoding="async" src="https://wordcampbr.github.io/countdown/countdown-live.svg" alt="">
+
 <script>
 ( function () {
     'use strict';

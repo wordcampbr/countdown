@@ -1,4 +1,4 @@
-name: Atualizar countdown.svg
+name: Atualizar countdown.svg e countdown.css
 
 on:
   schedule:
@@ -17,13 +17,16 @@ jobs:
       - name: Gerar SVG
         run: python3 generate-svg.py
 
+      - name: Gerar CSS
+        run: python3 generate-css.py
+
       - name: Commit se houver mudança
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- countdown.svg; then
-            git add countdown.svg
-            git commit -m "chore: atualiza countdown.svg"
+          if ! git diff --quiet -- countdown.svg countdown.css; then
+            git add countdown.svg countdown.css
+            git commit -m "chore: atualiza countdown.svg e countdown.css"
             git push
           else
             echo "Sem mudanças."

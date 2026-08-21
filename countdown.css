@@ -1,0 +1,22 @@
+/* Gerado automaticamente por generate-css.py — não editar à mão. */
+/* Cole em Aparência > Personalizar > CSS Adicional. */
+
+@property --wcbr-days {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 70;
+}
+
+.wcbr-count-days {
+  animation: wcbr-count-days-anim 6048000s steps(70, end) forwards;
+}
+
+@keyframes wcbr-count-days-anim {
+  from { --wcbr-days: 70; }
+  to   { --wcbr-days: 0; }
+}
+
+.wcbr-count-days::before {
+  counter-reset: wcbr-days var(--wcbr-days);
+  content: counter(wcbr-days);
+}
