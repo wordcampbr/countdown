@@ -2,7 +2,7 @@ name: Atualizar countdown.svg
 
 on:
   schedule:
-    - cron: "0 3 * * *" # todo dia às 03:00 UTC (00:00 BRT)
+    - cron: "30 15 * * *" # todo dia às 15:30 UTC (12:30 BRT)
   workflow_dispatch: {}
 
 permissions:
